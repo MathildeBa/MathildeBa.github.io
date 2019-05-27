@@ -1,0 +1,437 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,500);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);
+
+
+@base: #00ADD5;
+@complement1: lighten(spin(@base, 180),15%);
+@complement2: lighten(spin(@base, 180),10%);
+@complement3: lighten(spin(@base, 205),30%);
+@complement4: lighten(spin(@base, 205),20%);
+@lighten1: lighten(@base, 15%);
+@lighten2: lighten(@base, 25%);
+@lighten3: lighten(@base, 30%);
+@projects: 5;
+
+* {
+  box-sizing:border-box;
+}
+
+body {
+  font-size:20px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position:relative;
+}
+
+img {
+  max-width:100%;
+}
+
+.topbar {
+  padding:10px 30px;
+  height:106px;
+
+  
+  a, a:link, a:visited {
+  color:black;
+  text-decoration:none;
+  display:block;
+  }
+  
+  a:hover, a:active {
+    color:#333;
+  }
+}
+
+h1 {
+  float:left;
+  margin:20px 0;
+}
+
+h2 {
+  font-size:30px;
+}
+
+.social {
+  float:right;
+  margin:24px 0;
+  text-align:center;
+  padding:0;
+}
+
+.social li {
+  display:inline-block;
+  margin:0 8px;
+}
+
+
+.wrapper {
+  position:relative;
+  width:100%;
+  overflow-x:hidden;
+}
+
+.project {
+  float:left;
+  transition: width 0.5s ease;
+  overflow:auto;
+  cursor:pointer;
+  position:relative;
+  width:calc(100% / @projects);
+  height:0;
+}
+
+.selected {
+  cursor:auto;
+  width:100%;
+}
+
+.deselected {
+  width:0;
+}
+
+.close {
+  position:absolute;
+  right:50px;
+  top:158px;
+  color:white;
+  cursor:pointer;
+  display:none;
+  z-index:9999;
+  max-width:40px;
+}
+
+.title {
+  display:block;
+  padding:5px 10px;
+  background:white;
+  left:0;
+  margin-top:50px;
+  width:90%;
+  text-align: right;
+}
+
+.project:hover > .title, .selected > .title {
+  color:white;
+}
+
+.content {
+  width:80%;
+  margin:auto;
+  display:none;
+  background:white;
+  padding:20px;
+  margin-top:50px;
+  margin-bottom:30px;
+  line-height: 1.5;
+  font-weight: 300;
+  text-align: justify;
+}
+
+.details {
+  margin: 10px 0;
+  background:#eee;
+  padding:5px;
+  border-radius: 3px;
+  font-size: 0.85em;
+  font-family: 'Source Code Pro', "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+  font-weight: 300;
+  text-align: left;
+}
+
+.details b {
+  font-weight: 500;
+}
+
+a.button {
+    color:white !important;
+    text-transform: uppercase;
+    text-decoration:none;
+    padding:10px;
+    border-radius: 3px;
+    margin:10px 0;
+    display:inline-block;
+    font-weight: bold;
+}
+
+.ui-tooltip {
+    padding: 5px 10px;
+    color: black;
+    border-radius: 3px;
+    font: bold 12px "Helvetica Neue", Sans-Serif;
+    text-transform: uppercase;
+    box-shadow: none;
+    border:solid 2px black;
+  }
+
+.project:nth-of-type(8n+1) {
+  background:@complement1;
+  border-top:5px solid darken(@complement1,10);
+  
+  a, a:link, a:visited {
+    color:@complement1;
+  }
+  a:hover, a:active {
+    color:darken(@complement1,10);
+  }
+
+  a.button {
+    background:@complement1;
+    
+
+    &:hover{
+      background:darken(@complement1,10);
+    }
+  } 
+}
+
+.project:nth-of-type(8n+1):hover > .title, .project:nth-of-type(8n+1).selected > .title {
+  background:darken(@complement1,10);
+}
+
+.project:nth-of-type(8n+2) {
+  background:@complement2;
+  border-top:5px solid darken(@complement2,10);
+  
+  a, a:link, a:visited {
+    color:@complement2;
+  }
+  a:hover, a:active {
+    color:darken(@complement2,10);
+  }
+  a.button {
+    background:@complement2;
+    
+
+    &:hover{
+      background:darken(@complement2,10);
+    }
+  } 
+}
+
+.project:nth-of-type(8n+2):hover > .title, .project:nth-of-type(8n+2).selected > .title {
+  background:darken(@complement2,10);
+}
+
+.project:nth-of-type(8n+3) {
+  background:@base;
+  border-top:5px solid darken(@base,10);
+  
+  a, a:link, a:visited {
+    color:@base;
+  }
+  a:hover, a:active {
+    color:darken(@base,10);
+  }
+  a.button {
+    background:@base;
+    
+
+    &:hover{
+      background:darken(@base,10);
+    }
+  } 
+}
+
+.project:nth-of-type(8n+3):hover > .title, .project:nth-of-type(8n+3).selected > .title {
+  background:darken(@base,20);
+}
+
+.project:nth-of-type(8n+4) {
+  background:@lighten1;
+  border-top:5px solid darken(@lighten1,10);
+  
+  a, a:link, a:visited {
+    color:@lighten1;
+  }
+  a:hover, a:active {
+    color:darken(@lighten1,10);
+  }
+  a.button {
+    background:@lighten1;
+    
+
+    &:hover{
+      background:darken(@lighten1,10);
+    }
+  } 
+}
+
+.project:nth-of-type(8n+4):hover > .title, .project:nth-of-type(8n+4).selected > .title {
+  background:darken(@lighten1,20);
+}
+
+.project:nth-of-type(8n+5) {
+  background:@lighten2;
+  border-top:5px solid darken(@lighten2,10);
+  
+  a, a:link, a:visited {
+    color:@lighten2;
+  }
+  a:hover, a:active {
+    color:darken(@lighten2,10);
+  }
+  a.button {
+    background:@lighten2;
+    
+
+    &:hover{
+      background:darken(@lighten2,10);
+    }
+  } 
+}
+
+.project:nth-of-type(8n+5):hover > .title, .project:nth-of-type(8n+5).selected > .title {
+  background:darken(@lighten2,20);
+}
+
+.project:nth-of-type(8n+6) {
+  background:@lighten3;
+  border-top:5px solid darken(@lighten3,10);
+  
+  a, a:link, a:visited {
+    color:@lighten3;
+  }
+  a:hover, a:active {
+    color:darken(@lighten3,10);
+  }
+  a.button {
+    background:@lighten3;
+    
+
+    &:hover{
+      background:darken(@lighten3,10);
+    }
+  } 
+}
+
+.project:nth-of-type(8n+6):hover > .title, .project:nth-of-type(8n+6).selected > .title {
+  background:darken(@lighten3,20);
+}
+
+.project:nth-of-type(8n+7) {
+  background:@complement3;
+  border-top:5px solid darken(@complement3,10);
+  
+  a, a:link, a:visited {
+    color:@complement3;
+  }
+  a:hover, a:active {
+    color:darken(@complement3,10);
+  }
+  a.button {
+    background:@complement3;
+    
+
+    &:hover{
+      background:darken(@complement3,10);
+    }
+  } 
+}
+
+.project:nth-of-type(8n+7):hover > .title, .project:nth-of-type(8n+7).selected > .title {
+  background:darken(@complement3,20);
+}
+
+.project:nth-of-type(8n+8) {
+  background:@complement4;
+  border-top:5px solid darken(@complement4,10);
+  
+  a, a:link, a:visited {
+    color:@complement4;
+  }
+  a:hover, a:active {
+    color:darken(@complement4,10);
+  }
+  a.button {
+    background:@complement4;
+    
+
+    &:hover{
+      background:darken(@complement4,10);
+    }
+  } 
+}
+
+.project:nth-of-type(8n+8):hover > .title, .project:nth-of-type(8n+8).selected > .title {
+  background:darken(@complement4,20);
+}
+
+
+.left {
+  display:block;
+  width:49%;
+  margin-left:0;
+  margin-right: 1%;
+  float:left;
+}
+
+.right {
+  display:block;
+  width:49%;
+  margin-left: 1%;
+  margin-right:0;
+  float:left;
+}
+
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+
+@media screen and (max-width:580px){
+  .content {
+    width:95%;
+    margin-top:30px;
+    padding: 10px;
+  }
+  
+  h1 {
+    margin:5px auto;
+    text-align:center;
+    display:block;
+    float:none;
+  }
+  
+  h2 {
+    font-size:18px;
+  }
+  .social {
+    margin:5px auto;
+    float:none;
+  }
+  
+  .title {
+    margin:20px 0;
+  }
+  
+  .close {
+    right:0px;
+    top:145px;
+  }
+  
+  .project {
+   width:100%;
+   border-top:none !important;
+   height:auto;
+ }
+ .deselected {
+   height:0;
+   min-height:0;
+ }
+
+ .left, .right {
+  width:100%;
+  float:none;
+  margin:10px 0;
+ }
+
+}
